@@ -24,6 +24,9 @@
                     <a class="nav-link" href="#home">ホーム</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="#blog">ブログ</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="#about">自己紹介</a>
                 </li>
                 <li class="nav-item">
@@ -42,6 +45,33 @@
         <img src="https://images.pexels.com/photos/4001296/pexels-photo-4001296.jpeg" class="img-fluid" alt="Rabbit">
     </div>
 
+    <div class="container mt-5" id="blog">
+        <h1>ブログ</h1>
+        <script src="https://cdn.jsdelivr.net/npm/rss-parser@2.3.5/dist/rss-parser.min.js">
+            const parser = new RSSParser();
+            parser.parseURL('https://note.com/hafnium/rss', function (err, feed) {
+                if (err) throw err;
+                console.log(feed.title);
+                feed.items.forEach(function (entry) {
+                    console.log(entry.title + ':' + entry.link)
+                })
+            });
+            const container = document.getElementById("rss-container");
+            const title = document.createElement("h2");
+            title.innerHTML = feed.title;
+            container.appendChild(title);
+
+            feed.items.forEach(function (entry) {
+                const item = document.createElement("li");
+                const link = document.createElement("a");
+                link.innerHTML = entry.title;
+                link.href = entry.link;
+                item.appendChild(link);
+                container.appendChild(item);
+            });
+        </script>
+    </div>
+
     <div class="container mt-5" id="about">
         <h1>自己紹介</h1>
         <p>
@@ -55,6 +85,7 @@
             今後のプロジェクトとウェブ開発およびデータサイエンスの分野への貢献にご期待ください。
         </p>
     </div>
+
 
     <div class="container mt-5" id="contact">
         <h1>お問い合わせ</h1>
