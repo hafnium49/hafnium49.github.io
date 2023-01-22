@@ -36,52 +36,37 @@
         </div>
     </nav>
 
+    <rssapp-ticker id="xyWrwBs6JDjURss4"></rssapp-ticker>
+
     <!-- Page content -->
     <div class="container mt-5">
         <h1>ポートフォリオへようこそ! </h1>
         <p>
-            こんにちは！初心者のAIユーザー兼プログラマーのHafnium49です。このウェブサイトでご覧いただけるように、私はAIとプログラミングの分野に情熱を注いでおり、これらの分野で活躍するために必要なスキルと知識を得るために努力してきました。ここでは、私が携わったプロジェクトなどの作品例や、履歴書、連絡先などをご紹介しています。このウェブサイトが、私のスキルと経験についてご理解いただけることを願っています。私は常に学び、成長する機会を求めていますので、ご質問やプロジェクトでのコラボレーションをご希望の方は、ご遠慮なくご連絡ください。私のポートフォリオを見て楽しんでいただければと思います。
+            こんにちは！初心者のAIユーザー兼プログラマーのHafnium49です。このウェブサイトでご覧いただけるように、私はAIとプログラミングの分野に情熱を注いでおり、これらの分野で活躍するために必要なスキルと知識を得るために努力してきました。ここでは、私が携わったプロジェクトなどの作品例や、履歴書、連絡先などをご紹介しています。このウェブサイトが、私のスキルと経験についてご理解いただけることを願っています。
+        </p>
+        <p>常に学び、成長する機会を求めていますので、ご質問やプロジェクトでのコラボレーションをご希望の方は、ご遠慮なくご連絡ください。私のポートフォリオを見て楽しんでいただければと思います。
         </p>
         <img src="https://images.pexels.com/photos/4001296/pexels-photo-4001296.jpeg" class="img-fluid" alt="Rabbit">
     </div>
 
     <div class="container mt-5" id="blog">
         <h1>ブログ</h1>
-        <script src="https://cdn.jsdelivr.net/npm/rss-parser@2.3.5/dist/rss-parser.min.js">
-            const parser = new RSSParser();
-            parser.parseURL('https://note.com/hafnium/rss', function (err, feed) {
-                if (err) throw err;
-                console.log(feed.title);
-                feed.items.forEach(function (entry) {
-                    console.log(entry.title + ':' + entry.link)
-                })
-            });
-            const container = document.getElementById("rss-container");
-            const title = document.createElement("h2");
-            title.innerHTML = feed.title;
-            container.appendChild(title);
-
-            feed.items.forEach(function (entry) {
-                const item = document.createElement("li");
-                const link = document.createElement("a");
-                link.innerHTML = entry.title;
-                link.href = entry.link;
-                item.appendChild(link);
-                container.appendChild(item);
-            });
-        </script>
+        <rssapp-feed id="xyWrwBs6JDjURss4"></rssapp-feed>
     </div>
 
     <div class="container mt-5" id="about">
         <h1>自己紹介</h1>
         <p>
             自重筋トレ、バーチャルリアリティ、プログラミングに情熱を注ぐマルチタレント、Hafnium49をご紹介します。
-
+        </p>
+        <p>
             化学の研究者としてアカデミックな分野でキャリアをスタートさせましたが、プログラミングへの好奇心から、流体力学とFortranプログラミングの世界を探求することになりました。5年前に日本に帰国した後、ウェブ開発の世界に飛び込み、HTML、CSS、JavaScriptの基礎を独学で学びました。現在はデータサイエンティストとして、その知識と経験を生かし、この分野における革新と成長を推進しています。
-
+        </p>
+        <p>
             自由時間には、体操で体を動かし、Oculus Quest 2でバーチャルリアリティに没頭しています。
-            学問とプログラミングの両方の強力なバックグラウンドを持つHafnium49は、どんなチームにもユニークな視点とスキルセットをもたらす貴重な資産です。
-
+            学問とプログラミングの両方の強力なバックグラウンドを持つHafnium49は、どんなチームにもユニークな視点とスキルセットをもたらします。
+        </p>
+        <p>
             今後のプロジェクトとウェブ開発およびデータサイエンスの分野への貢献にご期待ください。
         </p>
     </div>
@@ -115,6 +100,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+    <script src="https://widget.rss.app/v1/ticker.js" type="text/javascript" async></script>
+    <script src="https://widget.rss.app/v1/feed.js" type="text/javascript" async></script>
 </body>
 
 </html>
